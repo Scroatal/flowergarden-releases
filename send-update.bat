@@ -21,8 +21,8 @@ echo.
 echo Backing up the code...
 if exist "%~dp0..\flowergarden-git\.git" (
   cd /d "%~dp0..\flowergarden-git"
-  git -c user.name="Flower Garden" -c user.email="flowergarden@users.noreply.github.com" pull -q --no-edit --no-rebase "..\flower-garden-godot\dev\fgp.bundle" master
-  git push -q -u origin main
+  git fetch -q "..\flower-garden-godot\dev\fgp.bundle" master
+  git push -q -f origin FETCH_HEAD:refs/heads/main
 )
 echo.
 echo Done! The kids' games will update the next time they start.
